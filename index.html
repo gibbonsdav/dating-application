@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Form Practice</title>
+  </head>
+  <body>
+    <div class="container">
+      <form id="form" class="form">
+        <h2>Application For Permission To Date My Daughter</h2>
+        <h5>Note: Form is to be completed at least 21 days prior to date</h5>
+        <div class="form-control">
+          <label for="name">Name</label>
+          <input type="text" id="name" placeholder="Enter name here" />
+          <small>Error message</small>
+        </div>
+        <div class="form-control">
+          <label for="address">Address</label>
+          <input type="text" id="address" placeholder="Enter address here" />
+          <small>Error message</small>
+        </div>
+        <div class="form-control">
+          <label for="email">Email</label>
+          <input type="text" id="email" placeholder="Enter Email" />
+          <small>Error message</small>
+        </div>
+        <div class="form-control">
+          <label for="phone">Phone number</label>
+          <input
+            type="number"
+            id="phone"
+            placeholder="Enter phone number here"
+          />
+          <small>Error message</small>
+        </div>
+        <div class="form-control">
+          <label for="iq">IQ</label>
+          <input type="number" id="iq" placeholder="Enter IQ here" />
+          <small>Error message</small>
+        </div>
+        <div class="gender">
+          <p>Select your gender:</p>
+
+          <input type="radio" id="male" name="gender" value="male" />
+          <label for="male">Male</label> <br />
+          <input type="radio" id="female" name="gender" value="female" />
+          <label for="female">Female</label> <br />
+          <input type="radio" id="other" name="gender" value="other" />
+          <label for="other">Other</label>
+        </div>
+        <br />
+        <div class="form-control">
+          <label for="date">Date of proposed outing</label>
+          <input type="date" id="date" name="date" />
+          <small>Error message</small>
+        </div>
+
+        <div class="form-2">
+          <h5>Check All That Apply</h5>
+          <input type="checkbox" id="tattoo" name="tattoo" value="tattoo" />
+          <label for="tattoo">I have tattoos and/or piercings</label>
+          <input type="checkbox" id="old" />
+          <label for="old"
+            >I am more than 2 years older than your daughter</label
+          >
+          <input type="checkbox" id="van" />
+          <label for="van">I own a panel van</label>
+          <input type="checkbox" id="work" />
+          <label for="work">I work full-time</label>
+          <input type="checkbox" id="rich" />
+          <label for="rich">My parents are rich</label>
+          <input type="checkbox" id="lit" />
+          <label for="lit">Is the date in a well lit location</label>
+        </div>
+        <div class="dropContainer">
+          <div class="dropdown">
+            <label for="talent">Political Persuasion</label> <br />
+            <select
+              name="political"
+              id="political"
+              placeholder="Choose a talent"
+            >
+              <option value="left-wing">Left-wing</option>
+              <option value="right-wing">Right-wing</option>
+              <option value="spoiler-vote">Spoiler Vote</option>
+            </select>
+          </div>
+
+          <div class="dropdown">
+            <label for="education">Education Level Completed</label> <br />
+            <select
+              name="education"
+              id="education"
+              placeholder="Education Level"
+            >
+              <option value="university">University</option>
+              <option value="high-school">High School</option>
+              <option value="associates">Associate's Degree</option>
+            </select>
+          </div>
+        </div>
+
+        <h4>Essay Section</h4>
+        <div class="form-control">
+          <label for="essay"
+            >In 50 words or more, explain why you want to date my
+            daughter</label
+          >
+          <textarea
+            name="essay"
+            id="essay"
+            cols="60"
+            rows="7"
+            placeholder="this better be good..."
+          ></textarea>
+          <small>Error message</small>
+        </div>
+
+        <button class="btn" type="submit">Submit</button>
+      </form>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
