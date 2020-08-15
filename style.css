@@ -165,6 +165,8 @@ h2 {
 }
 
 .modal-content p {
+  padding: 20px;
+  text-align: center;
 }
 
 .close-btn {
