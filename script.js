@@ -1,6 +1,14 @@
 const form = document.getElementById("form")
-const username = document.getElementById("username")
+const name = document.getElementById("name")
+const address = document.getElementById("address")
 const email = document.getElementById("email")
+const phone = document.getElementById("phone")
+const iq = document.getElementById("iq")
+const male = document.getElementById("male")
+const female = document.getElementById("female")
+const other = document.getElementById("other")
+const date = document.getElementById("date")
+const essay = document.getElementById("essay")
 
 // Show input error message
 function showError(input, message) {
@@ -17,66 +25,87 @@ function showSuccess(input) {
 }
 
 // Check email is valid
-function checkEmail(input) {
+function isValidEmail(email) {
   const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-  if (re.test(input.value.trim())) {
-    showSuccess(input)
-  } else {
-    showError(input, "Email is not valid")
-  }
+  return re.test(String(email).toLowerCase())
 }
 
 // Check required fields
-function checkRequired(inputArr) {
-  let isRequired = false
-  inputArr.forEach(function (input) {
-    if (input.value.trim() === "") {
-      showError(input, `${getFieldName(input)} is required`)
-      isRequired = true
-    } else {
-      showSuccess(input)
-    }
-  })
+// function checkRequired(inputArr) {
+//   let isRequired = false
+//   inputArr.forEach(function (input) {
+//     if (input.value.trim() === "") {
+//       showError(input, `${getFieldName(input)} is required`)
+//       isRequired = true
+//     } else {
+//       showSuccess(input)
+//     }
+//   })
 
-  return isRequired
-}
+//   return isRequired
+// }
 
 // Check input length
-function checkLength(input, min, max) {
-  if (input.value.length < min) {
-    showError(
-      input,
-      `${getFieldName(input)} must be at least ${min} characters`
-    )
-  } else if (input.value.length > max) {
-    showError(
-      input,
-      `${getFieldName(input)} must be less than ${max} characters`
-    )
-  } else {
-    showSuccess(input)
-  }
-}
-
-// Check passwords match
-function checkPasswordsMatch(input1, input2) {
-  if (input1.value !== input2.value) {
-    showError(input2, "Passwords do not match")
-  }
-}
+// function checkLength(input, min, max) {
+//   if (input.value.length < min) {
+//     showError(
+//       input,
+//       `${getFieldName(input)} must be at least ${min} characters`
+//     )
+//   } else if (input.value.length > max) {
+//     showError(
+//       input,
+//       `${getFieldName(input)} must be less than ${max} characters`
+//     )
+//   } else {
+//     showSuccess(input)
+//   }
+// }
 
 // Get fieldname
-function getFieldName(input) {
-  return input.id.charAt(0).toUpperCase() + input.id.slice(1)
-}
+// function getFieldName(input) {
+//   return input.id.charAt(0).toUpperCase() + input.id.slice(1)
+// }
 
 // Event listeners
 form.addEventListener("submit", function (e) {
   e.preventDefault()
-
-  if (!checkRequired([username, email])) {
-    checkLength(username, 3, 15)
-    checkLength(password, 6, 25)
-    checkEmail(email)
+  if (name.value === "") {
+    showError(name, "Name is required")
+  } else {
+    showSuccess(name)
   }
+  if (address.value === "") {
+    showError(address, "Address is required")
+  } else {
+    showSuccess(address)
+  }
+  if (email.value === "") {
+    showError(email, "Email is required")
+  } else if (!isValidEmail(email.value)) {
+    showError(email, "Please enter a valid email address")
+  } else {
+    showSuccess(email)
+  }
+  if (phone.value === "") {
+    showError(phone, "Phone is required")
+  } else {
+    showSuccess(phone)
+  }
+  if (iq.value === "") {
+    showError(iq, "IQ is required")
+  } else {
+    showSuccess(iq)
+  }
+  if (date.value === "") {
+    showError(date, "Date is required")
+  } else {
+    showSuccess(date)
+  }
+  if (essay.value.length < 49) {
+    showError(essay, "Essay must have 50 or more characters")
+  } else {
+    showSuccess(essay)
+  }
+  console.log(essay.value.length)
 })
