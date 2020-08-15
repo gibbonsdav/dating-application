@@ -7,8 +7,16 @@ const iq = document.getElementById("iq")
 const male = document.getElementById("male")
 const female = document.getElementById("female")
 const other = document.getElementById("other")
-const date = document.getElementById("date")
 const essay = document.getElementById("essay")
+
+const close = document.getElementById("close")
+const open = document.getElementById("open")
+
+// show modal
+open.addEventListener("click", () => modal.classList.add("show-modal"))
+
+//close modal
+close.addEventListener("click", () => modal.classList.remove("show-modal"))
 
 // Show input error message
 function showError(input, message) {

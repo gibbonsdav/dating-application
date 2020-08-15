@@ -3,6 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+      integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
+      crossorigin="anonymous"
+    />
     <link rel="stylesheet" href="style.css" />
     <title>Form Practice</title>
   </head>
@@ -80,8 +86,9 @@
             <select
               name="political"
               id="political"
-              placeholder="Choose a talent"
+              placeholder="political party"
             >
+              <option value="" disabled selected>Choose political party</option>
               <option value="left-wing">Left-wing</option>
               <option value="right-wing">Right-wing</option>
               <option value="spoiler-vote">Spoiler Vote</option>
@@ -95,6 +102,7 @@
               id="education"
               placeholder="Education Level"
             >
+              <option value="" disabled selected>Choose education level</option>
               <option value="university">University</option>
               <option value="high-school">High School</option>
               <option value="associates">Associate's Degree</option>
@@ -118,9 +126,24 @@
           <small>Error message</small>
         </div>
 
-        <button class="btn" type="submit">Submit</button>
+        <button class="btn" id="open" type="submit">Submit</button>
       </form>
     </div>
+
+    <div class="modal-container" id="modal">
+      <div class="modal">
+        <button class="close-btn" id="close">
+          <i class="fa fa-times"></i>
+        </button>
+        <div class="modal-header">
+          <h3>Thanks for submitting your application!</h3>
+        </div>
+        <div class="modal-content">
+          <p>We'll let ya know...</p>
+        </div>
+      </div>
+    </div>
+
     <script src="script.js"></script>
   </body>
 </html>
