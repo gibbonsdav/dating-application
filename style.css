@@ -119,16 +119,6 @@ h2 {
   width: 100%;
 }
 
-/* button,
-input[type="submit"] {
-  background-color: blue;
-  border: 0;
-  border-radius: 5px;
-  color: #fff;
-  cursor: pointer;
-  padding: 8px 12px;
-} */
-
 .modal-container {
   background-color: rgba(0, 0, 0, 0.6);
   display: none;
@@ -155,6 +145,8 @@ input[type="submit"] {
   max-width: 100%;
   width: 400px;
   height: 200px;
+  animation-name: modalopen;
+  animation-duration: var(--modal-duration);
 }
 
 .modal-header {
@@ -180,4 +172,17 @@ input[type="submit"] {
   position: absolute;
   top: 0;
   right: 0;
+}
+
+:root {
+  --modal-duration: 1s;
+}
+
+@keyframes modalopen {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }

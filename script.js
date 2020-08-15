@@ -18,6 +18,11 @@ open.addEventListener("click", () => modal.classList.add("show-modal"))
 //close modal
 close.addEventListener("click", () => modal.classList.remove("show-modal"))
 
+//hide modal by clicking outside
+window.addEventListener("click", (e) =>
+  e.target == modal ? modal.classList.remove("show-modal") : false
+)
+
 // Show input error message
 function showError(input, message) {
   const formControl = input.parentElement
